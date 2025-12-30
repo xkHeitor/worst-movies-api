@@ -1,0 +1,10 @@
+{
+  "name": "worst-movies-api",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "ts-node-dev src/main.ts",
+    "build": "tsc",
+    "start": "node dist/main.js",
+    "test": "jest"
+  }
+}
