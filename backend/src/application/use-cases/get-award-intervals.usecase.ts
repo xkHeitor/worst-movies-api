@@ -1,6 +1,6 @@
-import { AwardService } from "@src/domain/services/award.service";
-import { AwardRepository } from "@src/domain/repositories/award.repository";
 import { AwardIntervalsDTO } from "@src/application/dtos/award-intervals.dto";
+import { AwardRepository } from "@src/domain/repositories/award.repository";
+import { AwardService } from "@src/domain/services/award.service";
 import { Logger } from "@src/infrastructure/utils/logger";
 
 export class GetAwardIntervalsUseCase {

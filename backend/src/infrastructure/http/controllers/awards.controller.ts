@@ -1,6 +1,6 @@
-import { HttpRequest, HttpResponse } from "@src/infrastructure/http/types/http.types";
 import { GetAwardIntervalsUseCase } from "@src/application/use-cases/get-award-intervals.usecase";
 import { AwardRepository } from "@src/domain/repositories/award.repository";
+import { HttpRequest, HttpResponse } from "@src/infrastructure/http/types/http.types";
 import { Logger } from "@src/infrastructure/utils/logger";
 
 export class AwardsController {
