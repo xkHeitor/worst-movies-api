@@ -4,7 +4,7 @@ API para consultar intervalos de prêmios consecutivos de produtores.
 
 ## Como Rodar
 
-### Com Docker (Recomendado)
+### Com Docker
 ```bash
 docker-compose up
 ```
