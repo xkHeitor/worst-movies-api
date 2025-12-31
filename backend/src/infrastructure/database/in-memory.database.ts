@@ -1,6 +1,7 @@
 import { Award } from "../../domain/entities/award.entity";
+import { AwardRepository } from "../../domain/repositories/award.repository";
 
-class InMemoryDatabase {
+class InMemoryDatabase implements AwardRepository {
   private awards: Award[] = [];
 
   insert(award: Award) {
