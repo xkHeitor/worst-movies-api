@@ -1,4 +1,4 @@
-export type Award = { year: number; producers: string };
+import { Award } from "../../domain/entities/award.entity";
 
 class InMemoryDatabase {
   private awards: Award[] = [];
