@@ -1,7 +1,10 @@
 import { Award } from "@src/domain/entities/award.entity";
 import { ProducerInterval } from "@src/domain/entities/producer-interval.entity";
 
+type ProducerYearsMap = Map<string, number[]>;
+
 export class AwardService {
+  private static readonly MIN_WINS_FOR_INTERVAL = 2;
 
   static calculateIntervals(awards: Award[]): { min: ProducerInterval[], max: ProducerInterval[] } {
     if (!awards || awards.length === 0) {
@@ -13,8 +16,8 @@ export class AwardService {
     return this.findMinMaxIntervals(intervals);
   }
 
-  private static groupYearsByProducer(awards: Award[]): Map<string, number[]> {
-    const map = new Map<string, number[]>();
+  private static groupYearsByProducer(awards: Award[]): ProducerYearsMap {
+    const map: ProducerYearsMap = new Map<string, number[]>();
 
     awards.forEach(({ year, producers }) => {
       if (!producers || typeof producers !== 'string') {
@@ -37,16 +40,15 @@ export class AwardService {
       .filter(p => p.length > 0);
   }
 
-  private static calculateAllIntervals(producerYearsMap: Map<string, number[]>): ProducerInterval[] {
+  private static calculateAllIntervals(producerYearsMap: ProducerYearsMap): ProducerInterval[] {
     const intervals: ProducerInterval[] = [];
     
     producerYearsMap.forEach((years, producer) => {
-      if (years.length < 2) {
+      if (years.length < this.MIN_WINS_FOR_INTERVAL) {
         return;
       }
 
-      const uniqueYears = [...new Set(years)].sort((a, b) => a - b);
-      
+      const uniqueYears = this.getUniqueYearsSorted(years);
       for (let i = 1; i < uniqueYears.length; i++) {
         intervals.push({
           producer,
@@ -58,6 +60,11 @@ export class AwardService {
     });
     
     return intervals;
+  }
+
+  private static getUniqueYearsSorted(years: number[]): number[] {
+    const uniqueYears = Array.from(new Set(years));
+    return uniqueYears.sort((a, b) => a - b);
   }
 
   private static findMinMaxIntervals(intervals: ProducerInterval[]): { min: ProducerInterval[], max: ProducerInterval[] } {
