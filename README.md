@@ -19,11 +19,6 @@ npm start
 
 ## Testes
 
-### Rodar testes no Docker
-```bash
-docker build -f Dockerfile.test -t worst-movies-api-test .
-docker run --rm worst-movies-api-test
-```
 
 ### Rodar testes localmente (requer Node.js 20+)
 ```bash
