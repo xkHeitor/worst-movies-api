@@ -1,6 +1,10 @@
-version: '3.8'
+version: "3.8"
 services:
-api:
-build: .
-ports:
-- "3000:3000"
+  api:
+    build: .
+    env_file:
+      - .env
+    ports:
+      - "${PORT:-3000}:${PORT:-3000}"
+    environment:
+      - PORT=${PORT:-3000}
