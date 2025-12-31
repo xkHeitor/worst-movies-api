@@ -1,9 +1,9 @@
 import fs from "fs";
 import csv from "csv-parser";
 import path from "path";
-import { database } from "../database/in-memory.database";
-import { Logger } from "./logger";
-import { AwardValidator } from "../../domain/validators/award.validator";
+import { database } from "@src/infrastructure/database/in-memory.database";
+import { Logger } from "@src/infrastructure/utils/logger";
+import { AwardValidator } from "@src/domain/validators/award.validator";
 
 export function loadCSV(): Promise<void> {
   const csvDir = process.env.CSV_PATH || path.join(process.cwd(), "backend/data");

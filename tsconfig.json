@@ -5,7 +5,11 @@
     "outDir": "dist",
     "rootDir": "./backend/src",
     "strict": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "baseUrl": "./",
+    "paths": {
+      "@src/*": ["backend/src/*"]
+    }
   },
   "include": ["backend/src/**/*"],
   "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.spec.ts"]

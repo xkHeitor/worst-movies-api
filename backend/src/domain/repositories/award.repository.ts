@@ -1,4 +1,4 @@
-import { Award } from "../entities/award.entity";
+import { Award } from "@src/domain/entities/award.entity";
 
 export interface AwardRepository {
   getAll(): Award[];

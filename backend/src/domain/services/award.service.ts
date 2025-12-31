@@ -1,5 +1,5 @@
-import { Award } from "../entities/award.entity";
-import { ProducerInterval } from "../entities/producer-interval.entity";
+import { Award } from "@src/domain/entities/award.entity";
+import { ProducerInterval } from "@src/domain/entities/producer-interval.entity";
 
 export class AwardService {
 

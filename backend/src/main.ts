@@ -1,6 +1,6 @@
-import { app } from './infrastructure/http/server'
-import { loadCSV } from './infrastructure/utils/csv-loader'
-import { Logger } from './infrastructure/utils/logger'
+import { app } from '@src/infrastructure/http/server'
+import { loadCSV } from '@src/infrastructure/utils/csv-loader'
+import { Logger } from '@src/infrastructure/utils/logger'
 
 const PORT = process.env.PORT || 3000
 

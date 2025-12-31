@@ -3,7 +3,7 @@ export default {
   testEnvironment: 'node',
   testMatch: ['**/tests/**/*.spec.ts'],
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/backend/src/$1',
+    '^@src/(.*)$': '<rootDir>/backend/src/$1',
   },
   collectCoverageFrom: [
     'backend/src/**/*.ts',
