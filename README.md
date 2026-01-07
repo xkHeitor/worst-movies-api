@@ -10,7 +10,7 @@ docker-compose up
 ```
 Acesse: http://localhost:3000
 
-### Local (requer Node.js 20+)
+### Local (requer Node.js 22+)
 ```bash
 npm install
 npm run build
@@ -25,7 +25,7 @@ docker build -f Dockerfile.test -t worst-movies-api-test .
 docker run --rm worst-movies-api-test
 ```
 
-### Rodar testes localmente (requer Node.js 20+)
+### Rodar testes localmente (requer Node.js 22+)
 ```bash
 npm install
 npm test
@@ -34,6 +34,8 @@ npm test
 ### Com cobertura
 ```bash
 npm run test:coverage
+# ou
+npm run test:cov
 ```
 
 ## Endpoint

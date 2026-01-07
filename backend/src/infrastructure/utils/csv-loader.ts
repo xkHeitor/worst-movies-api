@@ -6,7 +6,8 @@ import { Logger } from "@src/infrastructure/utils/logger";
 import { AwardValidator } from "@src/domain/validators/award.validator";
 
 export function loadCSV(): Promise<void> {
-  const csvDir = process.env.CSV_PATH || path.join(process.cwd(), "backend/data");
+  const defaultPath = path.join(__dirname, "../../../../backend/data");
+  const csvDir = process.env.CSV_PATH || defaultPath;
 
   return new Promise((resolve, reject) => {
     Logger.info(`Looking for CSV files in: ${csvDir}`);

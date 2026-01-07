@@ -1,18 +1,21 @@
 {
   "name": "worst-movies-api",
   "version": "1.0.0",
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "scripts": {
     "dev": "ts-node-dev -r tsconfig-paths/register backend/src/main.ts",
     "build": "tsc && tsc-alias",
     "start": "node dist/main.js",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:cov": "jest --coverage"
+    "test:cov": "jest --coverage",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "csv-parser": "^3.2.0",
-    "express": "^5.2.1",
-    "fs": "^0.0.1-security"
+    "express": "^5.2.1"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
