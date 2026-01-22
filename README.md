@@ -2,15 +2,42 @@
 
 API para consultar intervalos de prêmios consecutivos de produtores.
 
+## Pré-requisitos
+
+- Node.js 22+
+- npm
+
 ## Como Rodar
 
-### Com Docker (Recomendado)
+### Desenvolvimento Local
+
+1. Clone o repositório e acesse a pasta:
+```bash
+git clone <url-do-repositorio>
+cd worst-movies-api
+```
+
+2. Copie o arquivo de exemplo de variáveis de ambiente (opcional):
+```bash
+cp .env.example .env
+```
+> **Nota:** O projeto funciona com valores padrão. O arquivo `.env` é opcional.
+
+3. Instale as dependências e rode:
+```bash
+npm install
+npm run dev
+```
+
+Acesse: http://localhost:3000
+
+### Com Docker
 ```bash
 docker-compose up
 ```
 Acesse: http://localhost:3000
 
-### Local (requer Node.js 22+)
+### Build de Produção Local
 ```bash
 npm install
 npm run build
@@ -19,16 +46,16 @@ npm start
 
 ## Testes
 
+### Rodar testes localmente (Recomendado)
+```bash
+npm install
+npm test
+```
+
 ### Rodar testes no Docker
 ```bash
 docker build -f Dockerfile.test -t worst-movies-api-test .
 docker run --rm worst-movies-api-test
-```
-
-### Rodar testes localmente (requer Node.js 22+)
-```bash
-npm install
-npm test
 ```
 
 ### Com cobertura
